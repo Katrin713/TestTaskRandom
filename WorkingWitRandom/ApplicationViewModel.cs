@@ -2,8 +2,6 @@
 using System.Linq;
 using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 using WorkingWithRandom.TypeRandom;
 
 namespace WorkingWithRandom
@@ -88,6 +86,7 @@ namespace WorkingWithRandom
         }
         private void seeResult()
         {
+            Results = new List<string>();
             ErrorVisibility = Visibility.Collapsed;
             ResultVisibility = Visibility.Visible;
         }
@@ -139,7 +138,6 @@ namespace WorkingWithRandom
                   {
                       Thread myThread;
                       seeResult();
-
                       if (typeButtons.enumType == EnumType.String)
                           myThread = new Thread(() => startGenerate(new StringRandom(), "STR:"));
                       else
